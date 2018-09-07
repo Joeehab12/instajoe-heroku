@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app = "instajoe">
+<head>
+    <meta charset="utf-8">
+    <title>Instajoe Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel = "stylesheet" href = "css/skeleton.css">
+    <link rel="stylesheet"  href="css/login.css">
+    <script src = "js/angular.min.js"></script>
+    <script src = "js/angular-cookies.js"></script>
+</head>
+<body>
+    <div class="outer-container">
+        <div ng-controller = "loginController as $ctrl" class="container">
+            <form name = "form" novalidate>
+
+                <div class = "row" >
+
+                    <div class="twelve columns">
+                        <h5 id = "welcome" for="email">Instajoe</h5>
+                        <input name = "email" ng-model = "email" class = "u-full-width" type = "email" placeholder= "Email" id = "email" >
+                        <p class = "email-message" ng-show = "form.email.$invalid" >Please enter a valid email.</p>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class="twelve columns">
+                        <!-- <label for="password">Your password</label> -->
+                        <input name = "password" ng-minlength = "5" ng-model = "password" class = "u-full-width" type = "password" placeholder= "Password" id = "password">
+                        <p class = "password-message" ng-show = "form.password.$error.minlength">Password must be at least 5 characters long.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <label class = "message" >{{$ctrl.errorMessage}}</label>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class="twelve columns">
+                        <!-- <div class="four columns offset-by-six"> -->
+                        <input ng-click = "$ctrl.click($event)" id = "login" class = "button-primary" type = "submit" value = "login">
+                        <!-- </div> -->
+                        <a href = "http://localhost:8008/register"> Not a member? Signup here </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type = "text/javascript" src = "app.js"></script>
+    <script type="text/javascript" src = "controllers/loginController.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app = "instajoe">
+<head>
+    <meta charset="utf-8">
+    <title>Instajoe Register</title>
+    <link rel = "stylesheet" href = "css/skeleton.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src = "js/angular.min.js"></script>
+    <script src = "js/angular-cookies.js"></script>
+</head>
+<body>
+    <!-- <base href="/" > -->
+    <div class="outer-container">
+        <div ng-controller = "registerController as $ctrl" class="container">
+            <form ng-submit="submitForm(userForm.$valid)" name = "registerForm" novalidate>
+                <div  class = "email">
+                    <!-- <div class="four columns offset-by-six"> -->
+                    <h5 id = "welcome" for="email">Instajoe</h5>
+                    <input  name = "email" ng-model = "email" class = "u-full-width" type = "email" placeholder= "Email" id = "email" required>
+                    <p ng-show = "registerForm.email.$invalid && !registerForm.email.$pristine" class = "help-block">Please enter a valid email.</p>
+                    <!-- </div> -->
+                </div>
+                <div class = "fullName">
+                    <!-- <label for="password">Your password</label> -->
+                    <input name = "fullName" ng-model = "fullName" class = "u-full-width" type = "text" placeholder= "Full Name" id = "fullName" required>
+                    <p ng-show = "registerForm.fullName.$invalid && !registerForm.fullName.$pristine" class = "help-block">Your full name is required</p>
+                </div>
+                <div class = "username">
+                    <!-- <label for="password">Your password</label> -->
+                    <input name = "username" ng-minlength = "5" ng-model = "username" class = "u-full-width" type = "text" placeholder= "Username" id = "username">
+                    <p ng-show="registerForm.username.$error.minlength" class="help-block">Username must be at least 5 characters long.</p>
+                </div>
+                <div class = "password">
+                    <!-- <label for="password">Your password</label> -->
+                    <input name = "password" ng-minlength = "8" ng-model = "password" class = "u-full-width" type = "password" placeholder= "Password" id = "password">
+                    <p ng-show="registerForm.password.$error.minlength" class="help-block">Password must be at least 5 characters long.</p>
+                </div>
+                <div class="error-message">
+                    <p class = "errorMessage">{{$ctrl.error_msg}}</p>
+                </div>
+                <div class = "register">
+                    <!-- <div class="four columns offset-by-six"> -->
+                    <input ng-disabled = "userForm.$invalid"ng-click = "$ctrl.click(event)" id = "register" class = "button-primary" type = "submit" value = "Signup">
+                    <!-- </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <script type="text/javascript" src = "js/register.js"></script> -->
+    <script type="text/javascript" src = "app.js"></script>
+    <script type="text/javascript" src = "controllers/registerController.js"></script>
+    <!-- <script type="text/javascript" src = "js/register-validation.js"></script> -->
+</body>
+</html>

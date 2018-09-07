@@ -1,0 +1,45 @@
+@media (min-width: 900px){
+    .col-md-8{
+        width: 66.6666667%;
+        float:left;
+        text-align: center;
+    }
+    .col-md-4{
+        width: 33.33333333%;
+        float:left;
+        text-align: center;
+    }
+    .col-md-6{
+        width: 50%;
+        float:left;
+        text-align: center;
+    }
+    .col-md-3{
+        width:25%;
+        float:left;
+        text-align: center;
+    }
+    .col-md-2{
+        width:16.666667%;
+        float:left;
+        text-align: center;
+    }
+    .col-md-1{
+        width:8.333333%;
+        float:left;
+        text-align: center;
+    }
+
+}
+@media (max-width: 900px){
+    .outer-container{
+        height:243px;
+    }
+    .settings{
+
+        top:0px;
+    }
+}
+
+
+/* @media(max-width:768px){ .row.flex { display: inherit; } } */

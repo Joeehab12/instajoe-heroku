@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html ng-app = "instajoe">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> Your Profile </title>
+    <script type="text/javascript" src = "js/jquery-3.2.1.min.js"> </script>
+    <script type="text/javascript" src = "js/jwt-decode.js"></script>
+    <script type="text/javascript" src = "js/angular.min.js"></script>
+    <script type="text/javascript" src = "js/angular-cookies.js"></script>
+    <link rel="shortcut icon" href="images/instagram-icon-colorful-by-Vexels2.png" type="image/png"/>
+    <link rel = "stylesheet" href = "css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "css/skeleton.css">
+    <link rel = "stylesheet" href = "css/feed.css">
+    <link rel = "stylesheet" href = "css/responsive-feed.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div  class = "container-fluid outer-container">
+        <nav ng- class = "navbar navbar-default">
+            <div class = "row">
+                <div class="item col-md-4">
+                    <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
+                    <div class="border">
+
+                    </div>
+                    <a class = "logo" href="#"> Instajoe </a>
+                </div>
+                <div class="item col-md-4">
+                    <!-- <i id = "search-icon" class = "material-icons"> search </i> -->
+                    <input id = "search" align = "center" class="search-bar" type="text" placeholder="Type to search">
+                </div>
+                <div class="item col-md-4">
+                    <!-- <ul class = "nav navbar-nav"> -->
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/explore.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/notification.png"/></a>
+                        <a href="#"><img src = "images/profile.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img class = "upload-button" src = "images/camera-logo.png" width = "30" height = "25"></a>
+                        <!-- <li></li> -->
+                    <!-- </ul> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div ng-controller = "profileController as $ctrl" class="profile-container">
+        <div class="row profile-image text-center">
+            <div class="col-md-4">
+                <a href="#"><img src="images/default-user.png" width = "152" height = "152"></a>
+            </div>
+            <div class="col-md-8">
+                <div class="row text-center">
+                    <div class="col-md-3 username">
+                        joehab12
+                    </div>
+                    <div class="col-md-2 edit-profile">
+                        <input value = "Edit Profile" type = "submit" class = "mybtn">
+                    </div>
+                    <div class="col-md-2 settings">
+                        <a href="#"><img src="images/cog-solid.svg" width = "20" height = "20"></a>
+                    </div>
+                </div>
+                <div class="profile-middle row text-center">
+                    <div class="col-md-2">
+                        <span><b>152</b> Posts</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span><b>221,154</b> Followers</span>
+                    </div>
+                    <div class="col-md-2">
+                        <span><b>200</b> Following</span>
+                    </div>
+                </div>
+                <div style = "padding:20px;" class="row">
+                    <div class="col-md-8">
+                        <p class = "full-name"><b>Youssef Ehab</b></p>
+                        <p class = "description">Hard working student. Ambitious,friendly,reliable and a very old gamer :-)</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="photo-header">
+            <span class = "photo-info"><b> nellykarimofficial </b></span>
+        </div> -->
+    </div>
+
+    <!-- <div class="dim">
+
+</div> -->
+<div class="image-popup">
+
+    <div class="image">
+        <img src="images/31944566_10216138548279305_1286016755788939264_o.jpg" width = "600px" height="600px">
+    </div>
+    <div class="image-info">
+        <div class="user">
+            <div class="user-container">
+                <div class="user-profile">
+                    <img class = "regular-img" width = "50px" height = "50px" src = "images/default-user.png"/>
+                </div>
+                <div class = "user-tag">
+                    <p class = "user-info"><span class = "signed-in-info">  joehab12</span> <span class = "first-last-name"> Youssef Ehab </span></p>
+                </div>
+            </div>
+        </div>
+        <div class="caption">
+            <p><b>joehab12</b> <span> Funday photo</span></p>
+        </div>
+        <div class="comments">
+            <p class = "comment-info"> <b>  selenagomez </b> <span> You are very attractive </span>  </p>
+        </div>
+        <div class="icons-container">
+
+
+            <div class="icons">
+                <div class="bottom-container">
+                    <div class="bottom-left">
+                        <a href="#">
+                            <img src = "images/like.png">
+                        </a>
+                        <a href="#">
+                            <img src = "images/comment.png">
+                        </a>
+                    </div>
+                    <div class="bottom-right">
+                        <a href="#">
+                            <img src = "images/save.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="likes">
+                <span class = "comment-info"> <b>25,243 likes</b> </span>
+            </div>
+            <div class = "photo-duration">
+                <span class = "first-last-name"> 2 HOURS AGO </span>
+            </div>
+            <div class="add-comment">
+                <input type="text" class = "comment-box" placeholder="Add a comment...">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-controller = "photoController as $ctrl" class="gallery">
+</div>
+</div>
+<script type = "text/javascript" src = "app.js"></script>
+<script type = "text/javascript" src = "controllers/profileController.js"></script>
+<!-- <script type = "module" src = "js/core-profile.js"></script> -->
+<script type="text/javascript" src = "js/profile.js"></script>
+<script type = "text/javascript" src = "controllers/photoController.js"></script>
+<!-- <script type = "module" src = "js/core-photos.js"></script> -->
+</body>
+</html>

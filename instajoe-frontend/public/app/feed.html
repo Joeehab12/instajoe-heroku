@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app = "instajoe">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> Your News Feed </title>
+    <script type="text/javascript" src = "js/jwt-decode.js"></script>
+    <script type="text/javascript" src = "js/angular.min.js"></script>
+    <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src = "js/angular-cookies.js"></script>
+    <link rel="shortcut icon" href="images/instagram-icon-colorful-by-Vexels2.png" type="image/png"/>
+    <link rel = "stylesheet" href = "css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "css/skeleton.css">
+    <link rel = "stylesheet" href = "css/feed.css">
+    <link rel = "stylesheet" href = "css/responsive-feed.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div  class = "container-fluid outer-container">
+        <nav ng- class = "navbar navbar-default">
+            <div class = "row">
+                <div class="item col-md-4">
+                    <img src = "images/instagram-brands.svg" width = "25px" height = "42px">
+                    <div class="border">
+
+                    </div>
+                    <a class = "logo" href="#"> Instajoe </a>
+                </div>
+                <div class="item col-md-4">
+                    <!-- <i id = "search-icon" class = "material-icons"> search </i> -->
+                    <input id = "search" align = "center" class="search-bar" type="text" placeholder="Type to search">
+                </div>
+                <div class="item col-md-4">
+                    <!-- <ul class = "nav navbar-nav"> -->
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/explore.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img src = "images/notification.png"/></a>
+                        <a href="#"><img src = "images/profile.png"/></a>
+                        <!-- <li>  </li> -->
+                        <a href="#"><img class = "upload-button" src = "images/camera-logo.png" width = "30" height = "25"></a>
+                        <!-- <li></li> -->
+                    <!-- </ul> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div ng-controller = "saveController as $ctrl" class="upload-image-popup" >
+        <div class="top-uploading">
+            <div class="uploading-left">
+                <img class = "uploading-thumbnail" src="images/default-user.png" width = "50px" height="50px">
+            </div>
+            <div class="uploading-center">
+                <div class="caption">
+                    <input type="text" ng-model = "caption" class = "caption-ctrl u-full-width" placeholder="Enter your caption..." >
+                </div>
+                <div class="location">
+                    <input type="text" ng-model = "location" class = "location-ctrl u-full-width" placeholder="Enter your location..." >
+                </div>
+            </div>
+            <div class="uploading-right">
+                <div class="browsing">
+                    <form  style = "display:none;" method = "post" enctype="multipart/form-data">
+                        <input type="file" style = "display:none;" name = "file_browse" class = "file_browse">
+                    </form>
+                    <input type="submit" class = "button_style" value = "Browse" >
+                </div>
+                <div class="uploading">
+                    <input ng-click = "$ctrl.click($event)" type="submit" class = "button_style" value = "Upload">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="loading"> </div>
+            <p class= "during-loading-text"> Your photo is being uploaded.</p>
+            <p class= "after-loading-text"> {{$ctrl.message}}</p>
+        </div>
+    </div>
+    <div class="feed-container">
+        <!-- <div class="photos-container"> -->
+        <div class="row text-center">
+            <div class="col-md-6">
+                <p>You have no photos yet.</p>
+            </div>
+            <div class="col-md-6 ">
+                <div ng-controller = "feedController as $ctrl">
+                    <a href="#">
+                        <div class="row text-center">
+                            <div class="col-md-1 col-md-offset-5">
+                                <a href="http://localhost:8008/profile"><img class = "regular-img"  width = "50px" height = "50px" src = "images/default-user.png"/></a>
+                            </div>
+
+                            <div class = "col-md-2">
+                                <p class = "user-info"><span class = "signed-in-info"> {{$ctrl.username}} </span> <span class = "first-last-name"> {{$ctrl.fullName}} </span></p>
+                            </div>
+                        </div>
+
+                    </a>
+                    <div class="row text-center">
+                        <div class="col-md-6 col-md-offset-4">
+                            <label class = "stories-label"> Stories</label>
+                            <p class = "stories-text">No Stories to Show at the moment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- <div class="photo-header">
+            <span class = "photo-info"><b> nellykarimofficial </b></span>
+        </div> -->
+
+</div>
+<script type="text/javascript" src = "js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src = "js/feed.js"></script>
+<script type="text/javascript" src = "js/core-feed.js"></script>
+<script type="text/javascript" src = "js/photo_save.js"></script>
+</body>
+</html>

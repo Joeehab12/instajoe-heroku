@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Raleway;
+    /*font-style: normal;
+    font-weight: 400;*/
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: Billabong;
+    /*font-style: normal;
+    font-weight: 400;*/
+    src: url(../fonts/Billabong.ttf);
+}
+body{
+    font-family: Raleway;
+    background-image: url("../images/tumblr_oiwytwMDKF1tf8vylo1_1280.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+input{
+    font-family: Raleway;
+}
+
+#welcome{
+    margin-bottom: 30px;
+    font-family: Billabong;
+    font-size: 45pt;
+    color:white;
+}
+#email {
+    height: 55px;
+}
+.email-message{
+    color:white;
+}
+.password-message{
+    color:white;
+}
+#password {
+    margin-top: 10px;
+    height: 55px;
+}
+#login{
+    margin-top: 10px;
+    border-radius: 30px;
+    width:100%;
+    /*background-color: #6c59b4;*/
+    border: none;
+    color:black;
+    background-color: white;
+    height:55px;
+}
+.container{
+    text-align: center;
+}
+.outer-container{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.message{
+    color: white;
+}
+@media (max-width:745px){
+    body{
+        background-size:auto;
+    }
+}
